@@ -1,13 +1,13 @@
-const ProblemRouter = require("express").Router();
+const problemRouter = require("express").Router();
 const { problemController } = require("../../controllers/index");
-
-ProblemRouter.get("/ping", function (req, res) {
+problemRouter.get("/ping", function (req, res) {
   res.json({ msg: "ping is coming" });
 });
-ProblemRouter.get("/:id", problemController.getProblem);
-ProblemRouter.get("/", problemController.getProblems);
-ProblemRouter.post("/", problemController.addProblem);
-ProblemRouter.delete("/:id", problemController.deleteProblem);
-ProblemRouter.put("/:id", problemController.updateProblem);
 
-module.exports = ProblemRouter;
+problemRouter.get("/:id", problemController.getProblem);
+problemRouter.get("/", problemController.getProblems);
+problemRouter.post("/", problemController.addProblem);
+problemRouter.delete("/:id", problemController.deleteProblem);
+problemRouter.put("/:id", problemController.updateProblem);
+
+module.exports = problemRouter;
