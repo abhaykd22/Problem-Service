@@ -1,6 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const BaseError = require("../errors/baseError");
 function errorHandler(err, req, res, next) {
+  console.log("-------!!!!!!!error handler!!!!--------");
   if (err instanceof BaseError) {
     return res.status(err.statusCode).json({
       success: false,

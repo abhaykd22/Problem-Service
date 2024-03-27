@@ -11,7 +11,6 @@ app.use("/api", apiRouter);
 app.get("/ping", function (req, res) {
   res.json({ msg: "server is running" });
 });
-
 app.use(errorHandler);
 
 app.listen(PORT, function () {
